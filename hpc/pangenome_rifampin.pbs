@@ -1,0 +1,21 @@
+#!/bin/bash
+#PBS -N pangenome_rifampin
+#PBS -l nodes=1:ppn=36
+#PBS -q cpuq
+#PBS -l walltime=23:59:59
+
+PROJ_DIR=$PBS_O_WORKDIR/pangenomes
+DATA_DIR=$PROJ_DIR/data
+SAMPLES_DIR=$DATA_DIR/samples
+PANGENOMES_DIR=$DATA_DIR/pangenomes
+
+source $PBS_O_WORKDIR/env
+mamba activate pangenomes
+
+cd $SAMPLES_DIR
+panaroo -i _panaroo_rifampin_ready.txt \
+        -o $PANGENOMES_DIR/rifampin \
+        -a core \
+        -t 36 \
+        --clean-mode strict \
+        --remove-invalid-genes
