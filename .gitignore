@@ -1,5 +1,9 @@
+# Exclude data
 data/
 data
 
 # Jupyter Notebook
 .ipynb_checkpoints
+
+# R
+.Rproj.user
