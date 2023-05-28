@@ -1,19 +1,24 @@
-```
+Threshold p-value
+- Ethambutol = 1E-18
+- Isoniazid = 1E-18
+- Rifampin = 1E-18
+
+```sh
 iqtree -v -s core_gene_alignment_filtered.aln -pre core_tree -nt 8 -fast -m GTR
 ```
 
 
-```
-panfeed -v -g ../../gff_antibitic -p gene_presence_absence.csv -o panfeed1 --upstream 100 --downstream 100 --compress --cores 3
+```sh
+panfeed -v -g ../../gff_antibiotic -p gene_presence_absence.csv -o panfeed1 --upstream 100 --downstream 100 --compress --cores 3
 ```
 
 
-```
+```sg
 ../../../scripts/phylogeny_distance.py --lmm core_tree.treefile > pyseer/phylogeny_K.tsv
 ```
 
 Panfeed1
-```
+```sh
 zcat hashes_to_patterns.tsv.gz > hashes_to_patterns.tsv
 zcat kmers_to_hashes.tsv.gz > kmers_to_hashes.tsv
 zcat kmers.tsv.gz > kmers.tsv
@@ -34,8 +39,8 @@ pyseer --lmm \
 ls gff_antibiotic | sed 's/.gff//g' > gff_antibiotic_panfeed2.txt 
 ```
 
-```
-panfeed-get-clusters -t 1E-10 -a pyseer/pyseer.tsv -p panfeed1/kmers_to_hashes.tsv  > pyseer/gene_clusters.txt
+```sh
+panfeed-get-clusters -t 1E-18 -a pyseer/pyseer.tsv -p panfeed1/kmers_to_hashes.tsv  > pyseer/gene_clusters.txt
 ```
 
 
@@ -53,7 +58,6 @@ panfeed -v \
 ```
 
 Panfeed2
-Manually remove a broken last line
 ```bash
 zcat hashes_to_patterns.tsv.gz > hashes_to_patterns.tsv
 zcat kmers_to_hashes.tsv.gz > kmers_to_hashes.tsv
