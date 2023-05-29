@@ -6,5 +6,9 @@ figs/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# CatBoost
+catboost_info/
+
 # R
 .Rproj.user
+.Rhistory
