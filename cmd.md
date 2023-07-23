@@ -1,7 +1,8 @@
-Threshold p-value
-- Ethambutol = 1E-18
-- Isoniazid = 1E-18
-- Rifampin = 1E-18
+Threshold p-value.
+List di https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3001755
+- Ethambutol = 1e-10 (41 pattern, 16 gen, 2607 kmer)
+- Isoniazid = 1e-8.5 = 3.16227766017e-9 (84 pattern, 41 gen, 2741 kmers)
+- Rifampin = 1e-10 (32 pattern, 14 gen, 452 kmer)
 
 ```sh
 iqtree -v -s core_gene_alignment_filtered.aln -pre core_tree -nt 8 -fast -m GTR
@@ -13,7 +14,7 @@ panfeed -v -g ../../gff_antibiotic -p gene_presence_absence.csv -o panfeed1 --up
 ```
 
 
-```sg
+```sh
 ../../../scripts/phylogeny_distance.py --lmm core_tree.treefile > pyseer/phylogeny_K.tsv
 ```
 
@@ -30,7 +31,7 @@ pyseer --lmm \
 --phenotypes ../../traits_antibiotic.tsv \
 --pres panfeed1/hashes_to_patterns.tsv \
 --similarity pyseer/phylogeny_K.tsv \
---output-patterns pyseer/kmer_patterns.txt \
+--output-patterns pyseer/hashed_patterns.txt \
 --cpu 4 > pyseer/pyseer.tsv
 ```
 
@@ -40,7 +41,7 @@ ls gff_antibiotic | sed 's/.gff//g' > gff_antibiotic_panfeed2.txt
 ```
 
 ```sh
-panfeed-get-clusters -t 1E-18 -a pyseer/pyseer.tsv -p panfeed1/kmers_to_hashes.tsv  > pyseer/gene_clusters.txt
+panfeed-get-clusters -t THRES -a pyseer/pyseer.tsv -p panfeed1/kmers_to_hashes.tsv  > pyseer/gene_clusters.txt
 ```
 
 
@@ -62,4 +63,9 @@ Panfeed2
 zcat hashes_to_patterns.tsv.gz > hashes_to_patterns.tsv
 zcat kmers_to_hashes.tsv.gz > kmers_to_hashes.tsv
 zcat kmers.tsv.gz > kmers.tsv
+sed -i '$ d' kmers.tsv
+```
+
+```sh
+panfeed-get-kmers -v -t THRES -a pyseer/pyseer.tsv -p panfeed2/kmers_to_hashes.tsv  -k panfeed2/kmers.tsv  > pyseer/kmer_hits.tsv
 ```
