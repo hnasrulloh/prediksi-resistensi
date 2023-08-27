@@ -2,6 +2,12 @@
 data/
 data
 figs/
+figs
+.vscode/
+
+# Pipeline stuff
+temp/
+mer_counts.jf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
