@@ -30,9 +30,9 @@ if genome_upload is not None and annot_upload is not None:
 
     #
     # Create Blast DB from genes ref
-    ethambutol_genes_ref_file = "gene_refs/ethambutol/ethambutol.fna"
-    isoniazid_genes_ref_file = "gene_refs/isoniazid/isoniazid.fna"
-    rifampin_genes_ref_file = "gene_refs/rifampin/rifampin.fna"
+    ethambutol_genes_ref_file = "gene_refs/ethambutol/_ethambutol.fasta"
+    isoniazid_genes_ref_file = "gene_refs/isoniazid/_isoniazid.fasta"
+    rifampin_genes_ref_file = "gene_refs/rifampin/_rifampin.fasta"
 
     db_dir = os.path.join(temp_dir, "db_ref")
     os.makedirs(db_dir, exist_ok=True)
