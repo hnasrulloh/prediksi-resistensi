@@ -1,8 +1,6 @@
 # Excludes
 data/
 data
-figs/
-figs
 .vscode/
 
 # Pipeline stuff
