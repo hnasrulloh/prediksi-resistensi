@@ -1,0 +1,3 @@
+Ethambutol = 1102609188
+Isoniazid = 2539368683
+Rifampin = 1690584957
