@@ -1,8 +1,3 @@
-Threshold p-value.
-List di https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3001755
-- Ethambutol = 1e-10 (41 pattern, 16 gen, 2607 kmer)
-- Isoniazid = 1e-8.5 = 3.16227766017e-9 (84 pattern, 41 gen, 2741 kmers)
-- Rifampin = 1e-10 (32 pattern, 14 gen, 452 kmer)
 
 ```sh
 iqtree -v -s core_gene_alignment_filtered.aln -pre core_tree -nt 8 -fast -m GTR
