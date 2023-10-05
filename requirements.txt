@@ -66,8 +66,6 @@ entrypoints=0.4=pyhd8ed1ab_0
 et_xmlfile=1.1.0=pyhd8ed1ab_0
 executing=1.2.0=pyhd8ed1ab_0
 expat=2.5.0=h27087fc_0
-fast-fisher=0.0.4=pypi_0
-fire=0.4.0=pypi_0
 flit-core=3.8.0=pyhd8ed1ab_0
 font-ttf-dejavu-sans-mono=2.37=hab24e00_0
 font-ttf-inconsolata=3.000=h77eed37_0
@@ -182,7 +180,6 @@ libxcb=1.13=h7f98852_1004
 libxml2=2.10.3=hca2bb57_4
 libzlib=1.2.13=h166bdaf_4
 llvm-openmp=8.0.1=hc9558a2_0
-llvmlite=0.38.1=pypi_0
 mafft=7.520=hec16e2b_0
 markupsafe=2.1.2=py310h1fa729e_0
 mash=2.3=ha9a2dd8_3
@@ -208,8 +205,6 @@ nest-asyncio=1.5.6=pyhd8ed1ab_0
 networkx=3.0=pyhd8ed1ab_0
 notebook=6.5.3=pyha770c72_0
 notebook-shim=0.2.2=pyhd8ed1ab_0
-numba=0.55.2=pypi_0
-numpy=1.22.4=pypi_0
 openjdk=11.0.1=h600c080_1018
 openjpeg=2.4.0=hb52868f_1
 openmp=8.0.1=0
@@ -374,8 +369,6 @@ samclip=0.4.0=hdfd78af_1
 samtools=1.16.1=h00cdaf9_2
 scikit-learn=1.2.2=py310h41b6a48_1
 scipy=1.10.1=py310h8deb116_0
-scoary-2=0.0.13=pypi_0
-seaborn=0.13.0=pypi_0
 seaborn-base=0.12.2=pyhd8ed1ab_0
 send2trash=1.8.0=pyhd8ed1ab_0
 seqtk=1.3=h7132678_4
@@ -396,7 +389,6 @@ taxadb=0.12.1=pyh5e36f6f_0
 tbb=2021.8.0=hf52228f_0
 tbl2asn-forever=25.7.2f=hec16e2b_2
 tenacity=8.2.2=pyhd8ed1ab_0
-termcolor=2.3.0=pypi_0
 terminado=0.17.1=pyh41d4057_0
 texttable=1.6.7=pyhd8ed1ab_0
 threadpoolctl=3.1.0=pyh8a188c0_0
